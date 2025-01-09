@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 231 Course Home Page - ABEL OKAKA NHACURU - Web and Computer Programming certificate progress tracker">
+    <meta name="author" content=" ABEL OKAKA NHACURU">
+    <title>WDD 231 - ABEL OKAKA NHACURU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/dates.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>WDD 231 Course Home</h1>
+            <button id="menu-button" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="chamber/">Chamber</a></li>
+                <li><a href="https://github.com/okakaabel/">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/abel-okaka-3240952ba">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to Web Development</h2>
+            <p>Track your progress through the Web and Computer Programming certificate.</p>
+        </section>
+
+        <section class="courses">
+            <h2>Certificate Courses</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Courses</button>
+                <button class="filter-btn" data-filter="WDD">WDD Courses</button>
+                <button class="filter-btn" data-filter="CSE">CSE Courses</button>
+            </div>
+            <p class="credits-info">Total Credits: <span id="total-credits">0</span></p>
+            <div id="course-list" class="course-grid"></div>
+        </section>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <img src="images/Profile.jpeg" alt=" ABEL OKAKA NHACURU's profile picture">
+            <p>Welcome to my WDD 231 portfolio! I'm a student passionate about web development and software engineering.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> ABEL OKAKA NHACURU | Kampala/Uganda</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
