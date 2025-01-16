@@ -59,8 +59,10 @@ function getMembershipLevel(level) {
     }
 }
 
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified();
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+
+document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+
 const response = await fetch('data/members.json'); // Ensure the correct path
 
 loadMembers();
