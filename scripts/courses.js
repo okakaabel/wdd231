@@ -18,7 +18,7 @@ const courses = [
         name: "Web Frontend Development I",
         section: "WDD",
         credits: 3,
-        completed: false
+        completed: true  // Marked as completed
     },
     {
         code: "WDD 231",
