@@ -1,0 +1,22 @@
+/* normalize.css */
+/* Reset styles for all browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Normalize styles for specific elements */
+html, body {
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+ul, ol {
+    list-style: none;
+}

@@ -1,0 +1,47 @@
+/* large.css (for screens >= 64em) */
+
+/* Directory List View */
+#directory-container.list .member-card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#directory-container.list .member-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-base {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}

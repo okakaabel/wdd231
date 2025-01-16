@@ -1,0 +1,21 @@
+/* medium.css (for screens >= 32.5em) */
+
+/* Directory Grid View */
+#directory-container.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.member-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
