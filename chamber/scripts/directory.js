@@ -1,9 +1,7 @@
-// Toggle menu for mobile
 document.getElementById('hamburger').addEventListener('click', () => {
     document.getElementById('nav-menu').classList.toggle('show');
 });
 
-// View toggle functionality
 const gridButton = document.getElementById('grid-view');
 const listButton = document.getElementById('list-view');
 const directoryContainer = document.getElementById('directory-container');
@@ -16,10 +14,9 @@ listButton.addEventListener('click', () => {
     directoryContainer.className = 'list';
 });
 
-// Fetch and display members
 async function loadMembers() {
     try {
-        const response = await fetch('data/members.js'); // Fetch from the new data file
+        const response = await fetch('data/members.json');  // Ensure the correct path
         const data = await response.json();
         displayMembers(data.members);
     } catch (error) {
@@ -35,7 +32,6 @@ function displayMembers(members) {
         const memberCard = document.createElement('div');
         memberCard.className = 'member-card';
         
-        // Get membership level text
         const membershipLevel = getMembershipLevel(member.membershipLevel);
         
         memberCard.innerHTML = `
@@ -63,9 +59,8 @@ function getMembershipLevel(level) {
     }
 }
 
-// Footer date information
 document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
+document.getElementById('lastModified').textContent = document.lastModified();
+const response = await fetch('data/members.json'); // Ensure the correct path
 
-// Load members when page loads
 loadMembers();
