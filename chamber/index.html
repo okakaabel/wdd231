@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber of Commerce Home</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/chamber-logo.jpeg" alt="Chamber Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+        <div class="social-media">
+            <a href="#"><img src="images/facebook-icon.jpg" alt="Facebook"></a>
+            <a href="#"><img src="images/linkedin-icon.jpg" alt="LinkedIn"></a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Call to Action -->
+        <section class="hero">
+            <img src="images/hero.jpg" alt="City Landscape">
+            <div class="hero-overlay">
+                <h1>Welcome to Our Chamber of Commerce</h1>
+                <a href="join.html" class="cta-button">Join Now</a>
+            </div>
+        </section>
+
+        <!-- Current Events Section -->
+        <section class="current-events">
+            <h2>Upcoming Events</h2>
+            <div class="event-card">
+                <h3>Business Networking Night</h3>
+                <p>Join us for our monthly networking event!</p>
+                <a href="#">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Weather Section with Dynamic API Data -->
+        <section class="weather">
+            <h2>Local Weather</h2>
+            <div class="weather-container">
+                <div class="current-weather">
+                    <h3>Current Weather</h3>
+                    <p>Temperature: <span id="current-temp"></span></p>
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <p id="weather-desc"></p>
+                </div>
+                <div class="forecast">
+                    <h3>3-Day Forecast</h3>
+                    <div id="forecast-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Spotlights Section -->
+        <section class="company-spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlights-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>Chamber of Commerce</p>
+                <p>123 Business Street</p>
+                <p>Contact: (555) 123-4567</p>
+            </div>
+            <div class="copyright">
+                &copy; <span id="current-year"></span> Chamber of Commerce
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/weather.js"></script>
+    <script src="scripts/spotlights.js"></script>
+</body>
+</html>
