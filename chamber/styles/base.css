@@ -1,6 +1,4 @@
-/* base.css */
-
-/* Root variables for colors and styles */
+/* General Styles */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -9,7 +7,14 @@
     --background-color: #f5f5f5;
 }
 
-/* Body styling */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -67,4 +72,106 @@ nav a {
 
 nav a:hover, nav a.active {
     background-color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Current Events */
+.current-events {
+    padding: 2rem;
+}
+
+.event-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.event-card a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Weather Section */
+.weather-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.current-weather, .forecast {
+    width: 48%;
+}
+
+.weather-container img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-base {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
 }
