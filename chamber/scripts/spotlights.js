@@ -4,21 +4,21 @@ const spotlightsContainer = document.getElementById('spotlights-container');
 const members = [
     {
         name: "Tech Innovators Inc.",
-        logo: "images/tech-logo.png",
+        logo: "images/tech-logo.jpg",
         level: "Gold",
         phone: "(555) 111-2222",
         website: "www.techinnovators.com"
     },
     {
         name: "Green Solutions LLC",
-        logo: "images/green-logo.png",
+        logo: "images/green-logo.jpg",
         level: "Silver",
         phone: "(555) 333-4444",
         website: "www.greensolutions.com"
     },
     {
         name: "Global Marketing Co.",
-        logo: "images/marketing-logo.png",
+        logo: "images/marketing-logo.jpg",
         level: "Gold",
         phone: "(555) 555-6666",
         website: "www.globalmarketing.com"

@@ -159,7 +159,7 @@ footer {
 }
 
 .footer-links {
-    display: flex;
+    display: grid;
     flex-direction: column;
     gap: 0.5rem;
 }
@@ -174,4 +174,22 @@ footer {
     padding-top: 1rem;
     text-align: center;
     font-size: 0.9rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.social-media img {
+    width: 59px;
+    height: 80px;
+    border-radius: 250%;
+    transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
 }
