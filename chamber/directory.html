@@ -3,77 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber of Commerce Business Directory - Find local businesses and services">
+    <title>Chamber of commerce Directory</title>
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <meta name="description" content="WDD 231 - Web Frontend development 1, a webpage by Abel Nhacuru Okaka offering a home page for chamber of commerce.">
     <meta name="author" content="ABEL OKAKA NHACURU">
-    
-    <!-- Facebook Open Graph meta tags -->
-    <meta property="og:title" content="Chamber of Commerce Directory">
+    <meta property="og:title" content="Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://okakaabel.github.io/wdd231/chamber/directory.html">
-    <meta property="og:url" content="https://okakaabel.github.io/wdd231/chamber/directory.html">
-    
-    <title>Business Directory - Chamber of Commerce</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    
-    <!-- CSS -->
-   <!-- CSS Files -->
-   <link rel="stylesheet" href="styles/normalize.css">
-   <link rel="stylesheet" href="styles/base.css">
-   <link rel="stylesheet" href="styles/medium.css" media="(min-width: 32.5em)">
-   <link rel="stylesheet" href="styles/large.css" media="(min-width: 64em)">
-
-    <!-- Scripts -->
+    <meta property="og:image" content="https://cdn.corporatefinanceinstitute.com/assets/international-chamber-of-commerce.jpeg">
+    <meta property="og:url" content="https://jonathanaloya.github.io/wdd231/chamber/directory.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/directory.css">
     <script src="scripts/directory.js" defer></script>
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <img src="images/chamber-logo.jpeg" alt="Chamber of Commerce Logo" class="logo">
-            <h1>Chamber of Commerce</h1>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/chambers-logo.jpeg" alt="Kampala Chamber of Commerce">
+                <h1>Kampala</h1>
+                <p>Chamber of Commerce</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn">Light Theme</button>
+                </div>
+            </nav>
         </div>
-        <nav>
-            <button id="hamburger" aria-label="Toggle navigation menu">☰</button>
-            <ul id="nav-menu" aria-label="Main navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
-
     <main>
-        <div class="directory-controls">
-            <h2>Business Directory</h2>
-            <div class="view-controls">
-                <button id="grid-view" aria-label="Switch to grid view" title="Grid View">⊞</button>
-                <button id="list-view" aria-label="Switch to list view" title="List View">≣</button>
-            </div>
+        <h2>Member Directory</h2>
+        <div id="view-toggle">
+            <button id="grid-view">Grid View</button>
+            <button id="list-view">List View</button>
         </div>
-        <div id="directory-container" class="grid"></div>
+        <section id="member-list">
+            <!-- Member cards or list items will be injected here by JavaScript -->
+        </section>
     </main>
-
     <footer>
-        <div class="footer-content">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>📍 123 Main Street, KIREKU, ST 12345</p>
-                <p>📧 <a href="mailto:info@chamberofcommerce.org">info@chamberofcommerce.org</a></p>
-                <p>📞 <a href="tel:+256761746896">(256) 76174-6896</a></p>
+        <div class="footer-container">
+            <div class="footer-contact">
+                <p><strong>Kampala Chamber of Commerce</strong></p>
+                <p>Kololo, Wampewo Avenue</p>
+                <p>Kampala, Uganda</p>
+                <p>info@kampcc.org</p>
+                <p>(+256) 773-841-368</p>
             </div>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Site Map</a>
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
             </div>
-        </div>
-        <div class="footer-base">
-            <p>&copy; <span id="year"></span> Chamber of Commerce | ABEL OKAKA NHACURU | WDD 231</p>
-            <p>Last Modified: <span id="lastModified"></span></p>
+            <div class="footer-info">
+                <p>WDD231 Class Project</p>
+                <p>ABEL OKAKA NHACURU</p>
+                <p>&copy; <span id="year"></span> Kampala Chamber of Commerce</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
         </div>
     </footer>
+    <script src="scripts/directory.js"></script>
 </body>
 </html>

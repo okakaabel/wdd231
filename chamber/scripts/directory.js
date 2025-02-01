@@ -1,68 +1,64 @@
-document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('nav-menu').classList.toggle('show');
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const memberList = document.getElementById('member-list');
+    const gridViewBtn = document.getElementById('grid-view');
+    const listViewBtn = document.getElementById('list-view');
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
 
-const gridButton = document.getElementById('grid-view');
-const listButton = document.getElementById('list-view');
-const directoryContainer = document.getElementById('directory-container');
+    let members = [];
+    let currentView = 'grid'; // Initialize the current view as grid
 
-gridButton.addEventListener('click', () => {
-    directoryContainer.className = 'grid';
-});
-
-listButton.addEventListener('click', () => {
-    directoryContainer.className = 'list';
-});
-
-async function loadMembers() {
-    try {
-        const response = await fetch('data/members.json');  // Ensure the correct path
-        const data = await response.json();
-        displayMembers(data.members);
-    } catch (error) {
-        console.error('Error loading members:', error);
-        directoryContainer.innerHTML = '<p>Error loading member data. Please try again later.</p>';
+    async function fetchMembers() {
+        const response = await fetch('data/members.json');
+        members = await response.json();
+        displayMembers(members, currentView); // Pass the current view to the displayMembers function
     }
-}
 
-function displayMembers(members) {
-    directoryContainer.innerHTML = '';
-    
-    members.forEach(member => {
-        const memberCard = document.createElement('div');
-        memberCard.className = 'member-card';
-        
-        const membershipLevel = getMembershipLevel(member.membershipLevel);
-        
-        memberCard.innerHTML = `
-            <img src="${member.image}" alt="${member.name}" loading="lazy">
-            <div class="member-info">
+    function displayMembers(members, view) {
+        memberList.innerHTML = '';
+        memberList.className = view === 'grid' ? 'grid-view' : 'list-view';
+        members.forEach(member => {
+            const memberDiv = document.createElement('div');
+            memberDiv.classList.add(view === 'grid' ? 'member-card' : 'member-list-item');
+            memberDiv.innerHTML = `
+                <img src="images/${member.image}" alt="${member.name}">
                 <h3>${member.name}</h3>
-                <p>${member.description}</p>
-                <p>📍 ${member.address}</p>
-                <p>📞 ${member.phone}</p>
-                <p>🌐 <a href="${member.website}" target="_blank">${member.website}</a></p>
-                <p>Membership Level: ${membershipLevel}</p>
-            </div>
-        `;
-        
-        directoryContainer.appendChild(memberCard);
-    });
-}
-
-function getMembershipLevel(level) {
-    switch(level) {
-        case 1: return "Member";
-        case 2: return "Silver";
-        case 3: return "Gold";
-        default: return "Unknown";
+                <p>${member.address}</p>
+                <p>${member.phone}</p>
+                <p><a href="${member.website}">${member.website}</a></p>
+            `;
+            memberList.appendChild(memberDiv);
+        });
     }
-}
 
-  document.getElementById('currentyear').textContent = new Date().getFullYear();
+    gridViewBtn.addEventListener('click', () => {
+        currentView = 'grid'; // Update the current view to grid
+        displayMembers(members, currentView);
+        gridViewBtn.classList.add('active');
+        listViewBtn.classList.remove('active');
+    });
 
-  document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+    listViewBtn.addEventListener('click', () => {
+        currentView = 'list'; // Update the current view to list
+        displayMembers(members, currentView);
+        listViewBtn.classList.add('active');
+        gridViewBtn.classList.remove('active');
+    });
 
-  const response = await fetch('data/members.json'); // Ensure the correct path
+    // Theme toggle functionality
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        if (document.body.classList.contains('dark-theme')) {
+            themeToggleBtn.textContent = 'Light Mode';
+        } else {
+            themeToggleBtn.textContent = 'Dark Mode';
+        }
+    });
 
-  loadMembers();
+    fetchMembers();
+
+    // Display current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Display last modified date in footer
+    document.getElementById('last-modified').textContent = document.lastModified;
+});
