@@ -3,112 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber of Commerce Home</title>
-
-    <!-- Meta Description -->
-    <meta name="description" content="Welcome to the Chamber of Commerce. Join us to connect with local businesses and stay updated on upcoming events.">
-
-    <!-- Meta Author (You can replace 'Student Name' with your actual name) -->
-    <meta name="author" content="ABEL OKAKA NHACURU">
-
-    <!-- Favicon (Ensure the image is in the correct location, and replace 'favicon.ico' if needed) -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Chamber of Commerce Home">
+    <title>Chamber of commerce Directory</title>
+    <meta name="description" content="WDD 231 - Web Frontend development 1, a webpage by Jonathan Aloya offering a home page for chamber of commerce.">
+    <meta name="author" content="Jonathan Aloya">
+    <meta property="og:title" content="Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://okakaabel.github.io/wdd231/chamber/index.html"> <!-- Ensure this image exists in your project -->
-    <meta property="og:url" content="https://okakaabel.github.io/wdd231/chamber/index.html"> <!-- Replace with your actual URL -->
-
-    <!-- Fonts -->
+    <meta property="og:image" content="https://cdn.corporatefinanceinstitute.com/assets/international-chamber-of-commerce.jpeg">
+    <meta property="og:url" content="">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/medium.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/chambers-logo.jpeg" alt="Chamber Logo">
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/tech-logo.jpg" alt="Kampala Chamber of Commerce">
+                <h1>Kampala</h1>
+                <p>Chamber of Commerce</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn">Light Theme</button>
+                </div>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-            </ul>
-        </nav>
     </header>
-
     <main>
-        <!-- Hero Section with Call to Action -->
         <section class="hero">
-            <img src="images/hero.jpg" alt="City Landscape">
-            <div class="hero-overlay">
-                <h1>Welcome to Our Chamber of Commerce</h1>
-                <a href="join.html" class="cta-button">Join Now</a>
-            </div>
+            <img src="images/hero.jpg" alt="Hero Image" class="responsive" loading="lazy">
+            <a href="join.html" class="cta">Join the Chamber of Commerce</a>
         </section>
-
-        <!-- Current Events Section -->
-        <section class="current-events">
-            <h2>Upcoming Events</h2>
-            <div class="event-card">
-                <h3>Business Networking Night</h3>
-                <p>Join us for our monthly networking event!</p>
-                <a href="#">Learn More</a>
-            </div>
+        <section class="events">
+            <h2>Home</h2>
+            <!-- Events content here -->
         </section>
-
-        <!-- Weather Section with Dynamic API Data -->
-        <section class="weather">
-            <h2>Local Weather</h2>
+        <section class="weather-section">
             <div class="weather-container">
-                <div class="current-weather">
-                    <h3>Current Weather</h3>
-                    <p>Temperature: <span id="current-temp"></span></p>
-                    <img id="weather-icon" src="images/weather-icon.jpg" alt="Weather Icon">
-                    <p id="weather-desc"></p>
+                <div class="weather-box events">
+                    <h3>Events</h3>
+                    <ul class="events-list" id="events-list">
+                            <!-- Events will be dynamically added here -->
+                    </ul>
+                    <!-- Events content goes here -->
                 </div>
-                <div class="forecast">
-                    <h3>3-Day Forecast</h3>
-                    <div id="forecast-container"></div>
+                <div class="weather-box current-weather">
+                    <h3>Current Weather</h3>
+                    <div id="current-weather">
+                        <!-- Weather data will be populated here by JavaScript -->
+                    </div>
+                </div>
+                <div class="weather-box weather-forecast">
+                    <h3>Weather Forecast</h3>
+                    <div id="weather-forecast">
+                        <!-- Weather forecast data will be populated here by JavaScript -->
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Company Spotlights Section -->
-        <section class="company-spotlights">
+        <section class="spotlights">
             <h2>Company Spotlights</h2>
-            <div id="spotlights-container"></div>
+            <div id="spotlights-container">
+                <!-- Company spotlights will be populated here by JavaScript -->
+            </div>
         </section>
     </main>
-
     <footer>
-        <div class="footer-content">
-            <div class="contact-info">
-                <p>Chamber of Commerce</p>
-                <p>123 Business Street</p>
-                <p>Contact: (555) 123-4567</p>
+        <div class="footer-container">
+            <div class="footer-contact">
+                <p><strong>Kampala Chamber of Commerce</strong></p>
+                <p>Kololo, Wampewo Avenue</p>
+                <p>Kampala, Uganda</p>
+                <p>info@kampcc.org</p>
+                <p>(+256) 773-841-368</p>
             </div>
-            <div class="copyright">
-                &copy; <span id="current-year"></span> Chamber of Commerce
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.jpg" alt="LinkedIn"></a>
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
             </div>
-        </div>
-        <div class="social-media">
-            <a href="#"><img src="images/Facebook.jpg" alt="Facebook"></a>
-            <a href="#"><img src="images/linkedin.jpg" alt="LinkedIn"></a>
+            <div class="footer-info">
+                <p>WDD231 Class Project</p>
+                <p>Jonathan Aloya</p>
+                <p>&copy; <span id="year"></span> Kampala Chamber of Commerce</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
         </div>
     </footer>
-
-    <script src="scripts/main.js"></script>
     <script src="scripts/weather.js"></script>
     <script src="scripts/spotlights.js"></script>
+    <script src="scripts/events.js"></script>
 </body>
 </html>
