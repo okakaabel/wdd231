@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber of commerce Directory</title>
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <meta name="description" content="WDD 231 - Web Frontend development 1, a webpage by Abel Okaka Nhacuru offering a home page for chamber of commerce.">
+    <meta name="author" content="ABEL OKAKA NHACURU">
+    <meta property="og:title" content="Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cdn.corporatefinanceinstitute.com/assets/international-chamber-of-commerce.jpeg">
+    <meta property="og:url" content="https://okakaabel.github.io/wdd231/chamber/directory.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/chambers-logo.jpeg" alt="Kampala Chamber of Commerce">
+                <h1>Kampala</h1>
+                <p>Chamber of Commerce</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn">Light Theme</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Thank You for Joining Us</h2>
+        <p>Thank you for submitting your application. Here are the details you provided:</p>
+        <ul>
+            <li>First Name: <span id="firstName"></span></li>
+            <li>Last Name: <span id="lastName"></span></li>
+            <li>Email: <span id="email"></span></li>
+            <li>Mobile Phone: <span id="mobilePhone"></span></li>
+            <li>Business/Organization Name: <span id="organization"></span></li>
+            <li>Submission Date and Time: <span id="timestamp"></span></li>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-contact">
+                <p><strong>Kampala Chamber of Commerce</strong></p>
+                <p>Kololo, Wampewo Avenue</p>
+                <p>Kampala, Uganda</p>
+                <p>info@kampcc.org</p>
+                <p>(+256) 761-746-896</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+            </div>
+            <div class="footer-info">
+                <p>WDD231 Class Project</p>
+                <p>ABEL OKAKA NHACURU</p>
+                <p>&copy; <span id="year"></span> Kampala Chamber of Commerce</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/join.js"></script>
+</body>
+</html>
