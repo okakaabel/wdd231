@@ -1,68 +1,108 @@
-/* General Layout */
+/* Base Layout and Spacing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light background color for better contrast */
+}
+
 main {
-    padding: 20px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Typography */
 h2 {
     text-align: center;
-    margin-bottom: 1em; /* Ensures spacing from surrounding elements */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
 }
 
-/* Form Layout */
+p {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Form Styles */
 form {
-    max-width: 600px;
+    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
-    justify-content: space-between; /* Ensures spacing between form elements */
+    gap: 1.5rem;
+    justify-content: space-between;
 }
 
 form label {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 5px 0; /* Provides better spacing around labels */
+    padding: 0.5rem 0;
+    font-weight: 600;
+    color: #333;
 }
 
-form input, form select, form textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%; /* Ensures inputs fill their container */
+form input,
+form select,
+form textarea {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-top: 8px;
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 input[type="submit"] {
-    background-color: #007BFF;
-    color: white;
+    background-color: #007bff;
+    color: #fff;
     border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
     cursor: pointer;
-    padding: 10px;
-    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue for better hover contrast */
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .learn-more {
-    margin-top: 10px;
-    background-color: #007BFF;
-    color: white;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    padding: 5px 10px;
+    padding: 8px 15px;
     cursor: pointer;
-    font-size: 14px;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none; /* Ensure links inside buttons don't have underlines */
+    font-size: 1rem;
     border-radius: 4px;
-    width: fit-content;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .learn-more:hover {
@@ -78,100 +118,150 @@ input[type="submit"]:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 600px;
     width: 80%;
-    max-width: 600px; /* Ensures a maximum width for larger screens */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .close {
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
     cursor: pointer;
 }
 
-/* Membership Cards Layout */
+.close:hover {
+    color: #000;
+}
+
+/* Cards Styles */
 .membership-card-container {
     display: grid;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5em; /* Adds space between cards */
-    margin-top: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive card layout */
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive card grid */
+    justify-items: center;
+    margin-top: 2rem;
 }
 
 .membership-card {
-    padding: 20px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.5s ease-out;
-    width: 100%; /* Ensures the card takes full width of its container */
-    max-width: 340px; /* Limits max width for a more uniform look */
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 340px;
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .membership-card:hover {
-    background-color: #f1f1f1;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .membership-card .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
     margin-bottom: 10px;
 }
 
 .membership-card .card-id {
-    font-size: 14px;
+    font-size: 1rem;
     color: #777;
     margin-bottom: 10px;
 }
 
 .membership-card .card-details {
-    font-size: 14px;
-    color: #333;
+    font-size: 1rem;
+    color: #555;
     margin-top: 10px;
 }
 
-/* Responsive Design */
-@media (min-width: 600px) {
-    form label {
-        width: 48%;
+.membership-card .learn-more {
+    background-color: #28a745;
+    margin-top: 10px;
+}
+
+.membership-card .learn-more:hover {
+    background-color: #218838;
+}
+
+/* Accessibility: Ensuring Good Color Contrast */
+input,
+select,
+textarea {
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+input[type="submit"],
+.learn-more {
+    background-color: #007bff;
+    color: #fff;
+}
+
+input[type="submit"]:hover,
+.learn-more:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    main {
+        padding: 40px 15px;
+    }
+
+    form {
+        max-width: 90%;
+    }
+
+    .membership-card-container {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Adjusts for medium screens */
+    }
+
+    .membership-card {
+        max-width: 100%;
     }
 }
 
-@media (max-width: 599px) {
-    .modal-content {
-        width: 90%;
+@media (max-width: 480px) {
+    .membership-card-container {
+        grid-template-columns: 1fr; /* Stacks cards on mobile */
     }
+
+    .membership-card {
+        max-width: 100%;
+    }
+
     form label {
         width: 100%;
     }
-    .membership-card-container {
-        grid-template-columns: 1fr; /* Stack cards on small screens */
-    }
-    .membership-card {
-        max-width: 100%; /* Ensures cards take full width on mobile */
+
+    input[type="submit"],
+    .learn-more {
+        padding: 10px 15px;
     }
 }
