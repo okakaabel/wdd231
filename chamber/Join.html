@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamber of Commerce Directory</title>
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
-    <meta name="description" content="WDD 231 - Web Frontend development 1, a webpage by ABEL OKAKA NHACURU offering a home page for chamber of commerce.">
+    <meta name="description" content="WDD 231 - Web Frontend development 1, a webpage by ABEL OKAKA NHACURU offering a home page for the chamber of commerce.">
     <meta name="author" content="ABEL OKAKA NHACURU">
     <meta property="og:title" content="Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://cdn.corporatefinanceinstitute.com/assets/international-chamber-of-commerce.jpeg">
-    <meta property="og:url" content="https://okakaabel.github.io/wdd231/chamber/Join.html">
+    <meta property="og:url" content="https://okakaabel.github.io/wdd231/chamber/join.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -19,63 +20,65 @@
     <link rel="stylesheet" href="styles/join.css">
     <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="images/chambers-logo.jpeg" alt="Kampala Chamber of Commerce" loading="lazy">
+                <img src="images/chambers-logo.jpeg" alt="Kampala Chamber of Commerce">
                 <h1>Kampala</h1>
                 <p>Chamber of Commerce</p>
             </div>
-            <nav aria-label="Main Navigation">
+            <nav>
                 <ul>
-                    <li><a href="index.html" aria-label="Go to Home Page">Home</a></li>
-                    <li><a href="directory.html" aria-label="View Directory">Directory</a></li>
-                    <li><a href="join.html" aria-label="Join Us">Join</a></li>
-                    <li><a href="discover.html" aria-label="Discover More">Discover</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
                 </ul>
                 <div class="theme-toggle">
-                    <button id="theme-toggle-btn" aria-label="Toggle theme">Light Theme</button>
+                    <button id="theme-toggle-btn">Light Theme</button>
                 </div>
             </nav>
         </div>
     </header>
+
     <main>
         <h2>Join Us</h2>
         <form method="get" action="thankyou.html">
-            <label>
+            <label for="first-name">
                 First Name:
-                <input type="text" name="first-name" title="First Name" autocomplete="given-name" required>
+                <input type="text" name="first-name" id="first-name" title="First Name" autocomplete="given-name" required aria-label="Enter your first name">
             </label>
             <br>
-            <label>
+            <label for="last-name">
                 Last Name:
-                <input type="text" name="last-name" title="Last Name" autocomplete="family-name" required>
+                <input type="text" name="last-name" id="last-name" title="Last Name" autocomplete="family-name" required aria-label="Enter your last name">
             </label>
             <br>
-            <label>
+            <label for="organization-title">
                 Organizational Title:
-                <input type="text" name="organization-title" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
+                <input type="text" name="organization-title" id="organization-title" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" aria-label="Enter your organization title">
             </label>
             <br>
-            <label>
+            <label for="email">
                 Email:
-                <input type="email" name="email" title="Email Address" autocomplete="email" placeholder="example@domain.com" required>
+                <input type="email" name="email" id="email" title="Email Address" autocomplete="email" placeholder="example@domain.com" required aria-label="Enter your email address">
             </label>
             <br>
-            <label>
+            <label for="mobile-phone">
                 Mobile Phone Number:
-                <input type="tel" name="mobile-phone" title="Mobile Phone Number" autocomplete="tel" required>
+                <input type="tel" name="mobile-phone" id="mobile-phone" title="Mobile Phone Number" autocomplete="tel" required aria-label="Enter your phone number">
             </label>
             <br>
-            <label>
+            <label for="organization">
                 Business/Organization Name:
-                <input type="text" name="organization" title="Organization Name" autocomplete="organization" required>
+                <input type="text" name="organization" id="organization" title="Organization Name" autocomplete="organization" required aria-label="Enter your business or organization name">
             </label>
             <br>
-            <label>
+            <label for="membership-level">
                 Membership Level:
-                <select name="membership-level" title="Membership Level" required>
+                <select name="membership-level" id="membership-level" title="Membership Level" required aria-label="Select membership level">
                     <option value="">Select Membership Option...</option>
                     <option value="NP">NP Membership</option>
                     <option value="Bronze">Bronze Membership</option>
@@ -85,26 +88,26 @@
             </label>
             <br>
             <label>
-                <button type="button" aria-label="Learn more about membership" onclick="showModal()">Learn More About Membership</button>
+                <button type="button" onclick="showModal()">Learn More About Membership</button>
             </label>
             <br>
-            <label>
+            <label for="organization-description">
                 Business/Organization Description:
-                <textarea name="organization-description" title="Organization Description"></textarea>
+                <textarea name="organization-description" id="organization-description" title="Organization Description" aria-label="Describe your business or organization"></textarea>
             </label>
             <br>
             <input type="hidden" name="timestamp" id="timestamp">
             <br>
             <label>
-                <input type="submit" value="Submit" aria-label="Submit the form">
+                <input type="submit" value="Submit">
             </label>
         </form>
 
         <!-- Modal -->
-        <div id="membershipModal" class="modal" aria-labelledby="modalLabel" aria-hidden="true">
+        <div id="membershipModal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal()" aria-label="Close modal">&times;</span>
-                <h2 id="modalLabel">Membership Benefits</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Membership Benefits</h2>
                 <div class="membership-card">
                     <h3>NP Membership</h3>
                     <p>No fee. Benefits include access to special events, training, and event discounts.</p>
@@ -135,10 +138,10 @@
                 <p>(+256) 761-746-896</p>
             </div>
             <div class="footer-social">
-                <a href="#" aria-label="YouTube"><img src="images/youtube.png" alt="YouTube"></a>
-                <a href="#" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="#" aria-label="LinkedIn"><img src="images/linkedin.png" alt="LinkedIn"></a>
-                <a href="#" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
             </div>
             <div class="footer-info">
                 <p>WDD231 Class Project</p>
@@ -151,4 +154,5 @@
 
     <script src="scripts/join.js"></script>
 </body>
+
 </html>
