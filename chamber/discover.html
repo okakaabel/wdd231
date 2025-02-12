@@ -24,10 +24,8 @@
         <div class="header-container">
             <div class="logo">
                 <img src="images/chambers-logo.jpeg" alt="Kampala Chamber of Commerce logo" aria-label="Kampala Chamber of Commerce Logo">
-                <h1>Kampala Chamber of Commerce - Discover Local Highlights</h1>
-                <p>Chamber of Commerce</p>
             </div>
-            <nav role="navigation">
+            <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="directory.html">Directory</a></li>
@@ -42,6 +40,7 @@
     </header>
 
     <main>
+        <h1>Kampala Chamber of Commerce - Discover Local Highlights</h1>
         <section class="sidebar">
             <h2>Visitor Info</h2>
             <p id="visit-message"></p>
@@ -71,13 +70,14 @@
             <div id="calendar" role="region" aria-labelledby="calendar-month-year">
                 <button id="prev-month" aria-label="Previous month">&lt;</button>
                 <button id="next-month" aria-label="Next month">&gt;</button>
-                <h3 id="calendar-month-year"></h3>
+                <h3 id="calendar-month-year">Calendar</h3>
                 <div id="calendar-days" role="grid"></div>
             </div>
         </section>
 
         <section class="main-content">
             <h2>Discover Local Highlights</h2>
+            <h2 id="discover-local-highlights">Discover Local Highlights</h2>
             <div class="gallery" role="region" aria-labelledby="discover-local-highlights">
                 <img src="images/hero.jpg" alt="Local landmark" loading="lazy">
                 <img src="images/dining.jpg" alt="Local dining spot" loading="lazy">
@@ -89,7 +89,7 @@
         </section>
     </main>
 
-    <footer role="contentinfo">
+    <footer>
         <div class="footer-container">
             <div class="footer-contact">
                 <p><strong>Kampala Chamber of Commerce</strong></p>
