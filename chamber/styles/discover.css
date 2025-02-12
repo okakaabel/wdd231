@@ -236,7 +236,7 @@ main {
 }
 
 .gallery img {
-    width: calc(40% - 10px);
+    width: calc(61% - 39px);
     height: auto;
     transition: transform 0.3s ease;
 }
