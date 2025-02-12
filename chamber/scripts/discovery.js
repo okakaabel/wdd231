@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Visitor Information
+document.addEventListener('DOMContentLoaded', function () {
     const visitMessage = document.getElementById('visit-message');
     const lastVisit = localStorage.getItem('lastVisit');
     const currentTime = Date.now();
@@ -19,9 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     localStorage.setItem('lastVisit', currentTime);
 
-    // Lazy Loading Images
     const lazyImages = document.querySelectorAll('.lazyload');
-
     const lazyLoad = target => {
         const io = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -34,26 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-
         io.observe(target);
     };
-
     lazyImages.forEach(lazyLoad);
 
-    // Display the current year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Display the last modified date
     document.getElementById('last-modified').textContent = document.lastModified;
 
-    // Initialize Calendar
     let currentMonth = new Date().getMonth();
     let currentYear = new Date().getFullYear();
-
-    // Generate Calendar
     generateCalendar(currentMonth, currentYear);
 
-    document.getElementById('prev-month').addEventListener('click', function() {
+    document.getElementById('prev-month').addEventListener('click', function () {
         currentMonth--;
         if (currentMonth < 0) {
             currentMonth = 11;
@@ -62,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         generateCalendar(currentMonth, currentYear);
     });
 
-    document.getElementById('next-month').addEventListener('click', function() {
+    document.getElementById('next-month').addEventListener('click', function () {
         currentMonth++;
         if (currentMonth > 11) {
             currentMonth = 0;
@@ -87,10 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const firstDay = new Date(year, month, 1).getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        // Clear previous calendar days
         calendarDays.innerHTML = '';
 
-        // Generate day names
+        // Create day names (headers)
         dayNames.forEach(dayName => {
             const dayNameCell = document.createElement('div');
             dayNameCell.className = 'calendar-day-name';
@@ -98,17 +86,24 @@ document.addEventListener('DOMContentLoaded', function() {
             calendarDays.appendChild(dayNameCell);
         });
 
-        // Generate empty cells for days of the week before the first day of the month
+        // Empty cells before the first day of the month
         for (let i = 0; i < firstDay; i++) {
             const emptyCell = document.createElement('div');
             emptyCell.className = 'calendar-day empty';
             calendarDays.appendChild(emptyCell);
         }
 
-        // Generate days of the month
+        // Create days of the month
         for (let day = 1; day <= daysInMonth; day++) {
             const dayCell = document.createElement('div');
             dayCell.className = 'calendar-day';
+
+            // Highlight the current day
+            const currentDate = new Date();
+            if (day === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear()) {
+                dayCell.classList.add('today');
+            }
+
             dayCell.textContent = day;
             calendarDays.appendChild(dayCell);
         }
