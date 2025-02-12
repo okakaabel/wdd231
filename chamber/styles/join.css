@@ -208,8 +208,8 @@ footer {
 }
 
 .footer-social img {
-    width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 15px;
     transition: transform 0.3s ease;
 }
 
@@ -223,8 +223,8 @@ footer p {
 
 /* Footer Images */
 .footer-social img {
-    width: 40px;
-    height: 40px;
+    width: 10px;
+    height: 15px;
     transition: transform 0.3s ease;
 }
 
