@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber of commerce Directory</title>
+    <title>Chamber of Commerce Directory</title>
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
     <meta name="description" content="WDD 231 - Web Frontend development 1, a webpage by ABEL OKAKA NHACURU offering a home page for chamber of commerce.">
     <meta name="author" content="ABEL OKAKA NHACURU">
@@ -23,19 +23,19 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="images/chambers-logo.jpeg" alt="Kampala Chamber of Commerce">
+                <img src="images/chambers-logo.jpeg" alt="Kampala Chamber of Commerce" loading="lazy">
                 <h1>Kampala</h1>
                 <p>Chamber of Commerce</p>
             </div>
-            <nav>
+            <nav aria-label="Main Navigation">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="index.html" aria-label="Go to Home Page">Home</a></li>
+                    <li><a href="directory.html" aria-label="View Directory">Directory</a></li>
+                    <li><a href="join.html" aria-label="Join Us">Join</a></li>
+                    <li><a href="discover.html" aria-label="Discover More">Discover</a></li>
                 </ul>
                 <div class="theme-toggle">
-                    <button id="theme-toggle-btn">Light Theme</button>
+                    <button id="theme-toggle-btn" aria-label="Toggle theme">Light Theme</button>
                 </div>
             </nav>
         </div>
@@ -55,7 +55,7 @@
             <br>
             <label>
                 Organizational Title:
-                <input type="text" name="organization-title" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+                <input type="text" name="organization-title" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
             </label>
             <br>
             <label>
@@ -76,7 +76,7 @@
             <label>
                 Membership Level:
                 <select name="membership-level" title="Membership Level" required>
-                    <option value=""> Select Membership Option...</option>
+                    <option value="">Select Membership Option...</option>
                     <option value="NP">NP Membership</option>
                     <option value="Bronze">Bronze Membership</option>
                     <option value="Silver">Silver Membership</option>
@@ -85,7 +85,7 @@
             </label>
             <br>
             <label>
-                <button type="button" onclick="showModal()">Learn More About Membership</button>
+                <button type="button" aria-label="Learn more about membership" onclick="showModal()">Learn More About Membership</button>
             </label>
             <br>
             <label>
@@ -96,35 +96,35 @@
             <input type="hidden" name="timestamp" id="timestamp">
             <br>
             <label>
-            <input type="submit" value="Submit">
+                <input type="submit" value="Submit" aria-label="Submit the form">
             </label>
         </form>
-         <!-- Modal -->
-    <div id="membershipModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Membership Benefits</h2>
-            <div class="membership-card">
-                <h3>NP Membership</h3>
-                <p>No fee. Benefits include access to special events, training, and event discounts.</p>
-            </div>
-            <div class="membership-card">
-                <h3>Bronze Membership</h3>
-                <p>Benefits include access to special events, training, advertising opportunities, and event discounts.</p>
-            </div>
-            <div class="membership-card">
-                <h3>Silver Membership</h3>
-                <p>All Bronze benefits plus additional spotlight advertising on the home page and increased event discounts.</p>
-            </div>
-            <div class="membership-card">
-                <h3>Gold Membership</h3>
-                <p>All Silver benefits plus exclusive invitations to premium events and maximum advertising opportunities.</p>
+
+        <!-- Modal -->
+        <div id="membershipModal" class="modal" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()" aria-label="Close modal">&times;</span>
+                <h2 id="modalLabel">Membership Benefits</h2>
+                <div class="membership-card">
+                    <h3>NP Membership</h3>
+                    <p>No fee. Benefits include access to special events, training, and event discounts.</p>
+                </div>
+                <div class="membership-card">
+                    <h3>Bronze Membership</h3>
+                    <p>Benefits include access to special events, training, advertising opportunities, and event discounts.</p>
+                </div>
+                <div class="membership-card">
+                    <h3>Silver Membership</h3>
+                    <p>All Bronze benefits plus additional spotlight advertising on the home page and increased event discounts.</p>
+                </div>
+                <div class="membership-card">
+                    <h3>Gold Membership</h3>
+                    <p>All Silver benefits plus exclusive invitations to premium events and maximum advertising opportunities.</p>
+                </div>
             </div>
         </div>
-    </div>
-
     </main>
-     
+
     <footer>
         <div class="footer-container">
             <div class="footer-contact">
@@ -135,10 +135,10 @@
                 <p>(+256) 761-746-896</p>
             </div>
             <div class="footer-social">
-                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#" aria-label="YouTube"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="#" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
             </div>
             <div class="footer-info">
                 <p>WDD231 Class Project</p>
@@ -148,6 +148,7 @@
             </div>
         </div>
     </footer>
+
     <script src="scripts/join.js"></script>
 </body>
 </html>
