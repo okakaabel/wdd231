@@ -73,8 +73,6 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
-/* ... Your current code remains the same */
-
 .membership-card-container {
     display: grid;
     justify-content: center;
